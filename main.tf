@@ -28,9 +28,7 @@ resource "azurerm_virtual_network" "hub" {
 resource "azurerm_subnet" "private_endpoint" {
   name                                           = "snet-private-endpoint"
   resource_group_name                            = azurerm_resource_group.hub.name
-
-  virtual_network_name                           = azurerm_virtual_network.
-    .name
+  virtual_network_name                           = azurerm_virtual_network.hub.name
   address_prefixes                               = ["10.10.1.0/24"]
   private_endpoint_network_policies_enabled      = false
   private_link_service_network_policies_enabled  = false
