@@ -11,11 +11,7 @@ resource "random_string" "suffix" {
   special = false
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "tfc-demo-${random_string.suffix.result}"
-  location = local.location
-  tags     = local.tags
-}
+
 
 resource "azurerm_virtual_network" "hub" {
   name                = "tfc-hub-vnet-${random_string.suffix.result}"
